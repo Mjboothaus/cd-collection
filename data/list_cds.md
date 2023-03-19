@@ -1,4 +1,4 @@
-## Old CDs disposed of…
+Old CDs disposed of…
 
 https://music.apple.com/au/album/speechless/1656666336
 
@@ -108,3 +108,8 @@ https://music.apple.com/au/album/live-revelations/312048437
 
 https://music.apple.com/au/album/hymns-of-the-49th-parallel/1132717928
 
+https://music.apple.com/au/album/legacy-hymns-faith/715577851
+
+https://music.apple.com/au/album/abide-with-me-50-favourite-hymns-2-cds/1452793492
+
+https://music.apple.com/au/album/night-music-11/19370627

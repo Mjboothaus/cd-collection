@@ -16,6 +16,7 @@ dependencies = [
     "watchdog>=2.3.1",
     "ipython>=8.11.0",
     "tomli>=2.0.1",
+    "httpx>=0.23.3",
 ]
 requires-python = ">=3.9"
 license = {text = "MIT"}
