@@ -32,19 +32,53 @@ def get_cd_info():
 
 # Load album data, cache and sort by title
 
-cd_info_df = get_cd_info().sort_values(by="Album Title")
+cd_info_df = get_cd_info()
 
 # Create UI
 
-album_title = st.sidebar.selectbox(
-    label="Select CD (Album):", options=cd_info_df["Album Title"]
-)
+st.sidebar.write(f"{len(cd_info_df)} albums")
 
-artist = cd_info_df[cd_info_df["Album Title"] == album_title]["Artist"].iloc[0]
-album_url = cd_info_df[cd_info_df["Album Title"] == album_title]["Apple Music URL"].iloc[0]
-album_info = album_url.replace("https://music.apple.com/au/album/", "")
+album_or_artist = st.sidebar.radio(label="By Album or Artist:", options=["Album", "Artist"])
 
-st.write(f"**{album_title}** by *{artist}*")
 
-embed_html = create_embed_apple_music_iframe(album_info)
-components.html(embed_html, height=600)
+if album_or_artist == "Album":
+
+    cd_info_df.sort_values(by="Album Title", inplace=True)
+    album_title = st.sidebar.selectbox(
+        label="Select CD (Album):", options=cd_info_df["Album Title"]
+    )
+
+    artist = cd_info_df[cd_info_df["Album Title"] == album_title]["Artist"].iloc[0]
+    album_url = cd_info_df[cd_info_df["Album Title"] == album_title]["Apple Music URL"].iloc[0]
+    album_info = album_url.replace("https://music.apple.com/au/album/", "")
+
+    st.write(f"**{album_title}** by *{artist}*")
+
+    embed_html = create_embed_apple_music_iframe(album_info)
+    components.html(embed_html, height=600)
+
+else:
+
+    cd_info_df.sort_values(by="Artist", inplace=True)
+
+    artist = st.sidebar.selectbox(
+        label="Select Artist:", options=cd_info_df["Artist"].unique()
+    )
+
+    album_title = cd_info_df[cd_info_df["Artist"] == artist]["Album Title"].iloc[0]  # today - allow for multiple albums
+
+    n_album = len(cd_info_df[cd_info_df["Artist"] == artist])
+
+    st.sidebar.write(f"Number of album(s): {n_album}")
+
+    # st.write(cd_info_df[cd_info_df["Album Title"] == album_title]["Apple Music URL"])
+
+    for i_album in range(0, n_album):
+        album_url = cd_info_df[cd_info_df["Artist"] == artist]["Apple Music URL"].iloc[i_album]
+        album_info = album_url.replace("https://music.apple.com/au/album/", "")
+        album_title = cd_info_df[cd_info_df["Artist"] == artist]["Album Title"].iloc[i_album]
+
+        st.write(f"**{album_title}** by *{artist}*")
+
+        embed_html = create_embed_apple_music_iframe(album_info)
+        components.html(embed_html, height=600)
