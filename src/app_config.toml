@@ -1,0 +1,6 @@
+[st-app]
+DATASOURCE = 'Author - list of CDs disposed of'
+AUTHOR = 'by [DataBooth.com.au](https://www.databooth.com.au)'
+APP_TITLE = 'CD Collection'
+SUB_TITLE = 'Recalling the past via Apple Music'
+LAYOUT = 'wide'
