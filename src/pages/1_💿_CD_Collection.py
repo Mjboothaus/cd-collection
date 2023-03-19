@@ -30,10 +30,10 @@ def get_cd_info():
         raise FileNotFoundError
 
 
-def display_album(album_title, artist, album_info, height=600):
+def display_album(album_title, artist, album_info, height=500):
     st.write(f"**{album_title}** by *{artist}*")
     embed_html = create_embed_apple_music_iframe(album_info)
-    components.html(embed_html, height)
+    components.html(embed_html, height=height)
     return None
 
 
