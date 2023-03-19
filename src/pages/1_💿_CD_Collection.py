@@ -45,12 +45,12 @@ cd_info_df = get_cd_info()
 
 st.sidebar.write(f"{len(cd_info_df)} albums")
 
-album_or_artist = st.sidebar.radio(label="By Album or Artist:", options=["Album", "Artist"])
+album_or_artist = st.sidebar.radio(label="Select by Album or Artist:", options=["Album", "Artist"])
 
 if album_or_artist == "Album":
     cd_info_df.sort_values(by="Album Title", inplace=True)
     album_title = st.sidebar.selectbox(
-        label="Select CD (Album):", options=cd_info_df["Album Title"]
+        label="Select Album:", options=cd_info_df["Album Title"]
     )
     artist = cd_info_df[cd_info_df["Album Title"] == album_title]["Artist"].iloc[0]
     album_url = cd_info_df[cd_info_df["Album Title"] == album_title]["Apple Music URL"].iloc[0]
