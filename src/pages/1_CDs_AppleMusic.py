@@ -28,10 +28,10 @@ def get_cd_info():
         return cd_info_df
     else:
         raise FileNotFoundError
-    
+
 
 # Load album data, cache and sort by title
- 
+
 cd_info_df = get_cd_info().sort_values(by="Album Title")
 
 # Create UI

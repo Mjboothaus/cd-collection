@@ -2,6 +2,7 @@
 [tool.pdm.dev-dependencies]
 dev = [
     "notebook>=6.5.3",
+    "pre-commit>=3.2.0",
 ]
 
 [project]
