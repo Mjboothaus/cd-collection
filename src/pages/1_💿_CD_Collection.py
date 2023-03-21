@@ -17,15 +17,13 @@ def create_embed_apple_music_iframe(album_info):
         </iframe>
     </html>
     """
-    embed_html = embed_html.replace("APPLE_ALBUM_INFO", album_info)
-    return embed_html
+    return embed_html.replace("APPLE_ALBUM_INFO", album_info)
 
 
 @st.cache
 def get_cd_info():
     if Path(CD_INFO_FILE).exists():
-        cd_info_df = pd.read_parquet("data/cd_info.parquet")
-        return cd_info_df
+        return pd.read_parquet("data/cd_info.parquet")
     else:
         raise FileNotFoundError
 
@@ -64,7 +62,7 @@ else:
     album_title = cd_info_df[cd_info_df["Artist"] == artist]["Album Title"].iloc[0]
     n_album = len(cd_info_df[cd_info_df["Artist"] == artist])
     st.sidebar.write(f"Number of album(s): {n_album}")
-    for i_album in range(0, n_album):
+    for i_album in range(n_album):
         album_url = cd_info_df[cd_info_df["Artist"] == artist]["Apple Music URL"].iloc[i_album]
         album_info = album_url.replace("https://music.apple.com/au/album/", "")
         album_title = cd_info_df[cd_info_df["Artist"] == artist]["Album Title"].iloc[i_album]
