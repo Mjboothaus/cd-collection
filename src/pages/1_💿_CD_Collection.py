@@ -20,7 +20,7 @@ def create_embed_apple_music_iframe(album_info):
     return embed_html.replace("APPLE_ALBUM_INFO", album_info)
 
 
-@st.cache
+@st.cache_data
 def get_cd_info():
     if Path(CD_INFO_FILE).exists():
         return pd.read_parquet("data/cd_info.parquet")
