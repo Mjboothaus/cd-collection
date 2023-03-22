@@ -13,9 +13,10 @@ RUN pip install -r requirements.txt
 
 # Copy into a directory of its own (so it isn't in the toplevel dir)
 
+COPY .streamlit app/.streamlit
+COPY data app/data
 COPY docs app/docs
 COPY src app/src
-COPY data app/data
 
 WORKDIR /app
 
