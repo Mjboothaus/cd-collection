@@ -177,3 +177,15 @@ https://music.apple.com/au/album/amazing-grace-music-inspired-by-the-motion-pict
 https://music.apple.com/au/album/hits/128076661
 
 https://music.apple.com/au/album/anthony-callea/270341135
+
+https://music.apple.com/au/album/111-years-of-deutsche-grammophon/1452254474
+
+https://music.apple.com/au/album/but-seriously-deluxe-edition-remastered/1108855980
+
+https://music.apple.com/au/album/a-kernel-of-wheat/988636480
+
+https://music.apple.com/au/album/arriving/1440844200
+
+https://music.apple.com/au/album/fields-of-gold-the-best-of-sting-1984-1994-remastered/1440922134
+
+https://music.apple.com/au/album/7-worlds-collide-live-at-the-st-james/1600080045
