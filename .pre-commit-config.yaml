@@ -19,5 +19,5 @@ repos:
       hooks:
          - id: pdm-export
            # command arguments, e.g.:
-           args: ['-o', 'requirements.txt', '--without-hashes']
+           args: ['-o', 'requirements.txt', '--without-hashes', '--prod']
            files: ^pdm.lock$

@@ -1,3 +1,3 @@
 pdm update
 
-pdm export --o requirements.txt --without-hashes
+pdm export --o requirements.txt --without-hashes --prod
